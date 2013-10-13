@@ -267,10 +267,10 @@ module.exports = function (grunt) {
           rename: function (dest, src) {
               var path = require('path');
               if (src === 'distpackage.json') {
-                  return path.join(dest, 'package.json');
+                return path.join(dest, 'package.json');
               }
               return path.join(dest, src);
-          }
+            }
         }
         ]
       },
