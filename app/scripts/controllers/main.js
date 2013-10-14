@@ -24,27 +24,26 @@ angular.module('jsCajonYeomanApp')
 		});
 
 	$('.grave-a').click(function(){
-	    playAndRecord(playGraveAlto);
+	    playAndRecord(playGraveAlto, $(this));
 		});
 	$('.grave-b').click(function(){
-	    playAndRecord(playGraveBajo);
+	    playAndRecord(playGraveBajo, $(this));
 		});
 	$('.agudo-a').click(function(){
-	    playAndRecord(playAgudoAlto);
+	    playAndRecord(playAgudoAlto, $(this));
 		});
 	$('.agudo-b').click(function(){
-	    playAndRecord(playAgudoBajo);
+	    playAndRecord(playAgudoBajo, $(this));
 		});
 
-	var playAndRecord = function(sound){
-	    sound();
-	    song.push(sound);
+	var playAndRecord = function(sound, hitControl){
+	    sound(hitControl);
+	    song.push(function(){
+	    	sound(hitControl);
+	    });
 		};
 
-	$('.hit-control').click(function(){
-	    $(this).fadeOut('fast');
-	    $(this).fadeIn('fast');
-		});
+	$scope.mierda = 'mierda';
 
 	$scope.playSong = function(){
 		if (song.length > 0) {
@@ -67,19 +66,27 @@ angular.module('jsCajonYeomanApp')
 		$scope.velocity = $scope.newVelocity;
 	};
 
-	var playGraveAlto = function(){
+	var playGraveAlto = function(hitControl){
+	    hitControl.fadeOut('fast');
+	    hitControl.fadeIn('fast');
 	    graveAlto.play();
 		};
 
-	var playGraveBajo = function(){
+	var playGraveBajo = function(hitControl){
+	    hitControl.fadeOut('fast');
+	    hitControl.fadeIn('fast');
 	    graveBajo.play();
 		};
 
-	var playAgudoAlto = function(){
+	var playAgudoAlto = function(hitControl){
+	    hitControl.fadeOut('fast');
+	    hitControl.fadeIn('fast');
 	    agudoAlto.play();
 		};
 
-	var playAgudoBajo = function(){
+	var playAgudoBajo = function(hitControl){
+	    hitControl.fadeOut('fast');
+	    hitControl.fadeIn('fast');
 	    agudoBajo.play();
 		};
 
