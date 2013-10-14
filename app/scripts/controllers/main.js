@@ -39,8 +39,8 @@ angular.module('jsCajonYeomanApp')
 	var playAndRecord = function(sound, hitControl){
 	    sound(hitControl);
 	    song.push(function(){
-	    	sound(hitControl);
-	    });
+				sound(hitControl);
+			});
 		};
 
 	$scope.mierda = 'mierda';
@@ -61,10 +61,6 @@ angular.module('jsCajonYeomanApp')
 	$scope.deleteSong = function(){
 	    song.length = 0;
 		};
-
-	$scope.changeVelocity = function(){
-		$scope.velocity = $scope.newVelocity;
-	};
 
 	var playGraveAlto = function(hitControl){
 	    hitControl.fadeOut('fast');
