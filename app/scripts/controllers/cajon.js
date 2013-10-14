@@ -11,7 +11,7 @@ angular.module('jsCajonYeomanApp')
         scope: false,
         controller: 'CajonCtrl',
         templateUrl: 'views/cajon.html'
-      }
+      };
     })
     
 	.controller('CajonCtrl', function($scope){

@@ -1,6 +1,3 @@
-/*global $:false */
-/*global buzz:false */
-
 'use strict';
 
 angular.module('jsCajonYeomanApp')
@@ -12,7 +9,7 @@ angular.module('jsCajonYeomanApp')
 
 	$scope.addToSong = function(movement){
 	    song.push(movement);
-	};
+		};
 
 	$scope.playSong = function(){
 		if (song.length > 0) {
