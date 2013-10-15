@@ -1,5 +1,4 @@
 /*global $:false */
-/*global buzz:false */
 
 'use strict';
 
@@ -14,63 +13,32 @@ angular.module('jsCajonYeomanApp')
       };
     })
     
-	.controller('CajonCtrl', function($scope){
-
-	var graveAlto = new buzz.sound( 'sounds/grave-alto', {
-	    formats: [ 'ogg' ]
-		});
-	var graveBajo = new buzz.sound( 'sounds/grave-bajo', {
-	    formats: [ 'ogg' ]
-		});
-	var agudoAlto = new buzz.sound( 'sounds/agudo-alto', {
-	    formats: [ 'ogg' ]
-		});
-	var agudoBajo = new buzz.sound( 'sounds/agudo-bajo', {
-	    formats: [ 'ogg' ]
-		});
+	.controller('CajonCtrl', function($scope, sounds){
 
 	$('.grave-a').click(function(){
-	    playAndRecord(playGraveAlto, $(this));
+	    playAndRecord(sounds.graveAlto, $(this));
 		});
 	$('.grave-b').click(function(){
-	    playAndRecord(playGraveBajo, $(this));
+	    playAndRecord(sounds.graveBajo, $(this));
 		});
 	$('.agudo-a').click(function(){
-	    playAndRecord(playAgudoAlto, $(this));
+	    playAndRecord(sounds.agudoAlto, $(this));
 		});
 	$('.agudo-b').click(function(){
-	    playAndRecord(playAgudoBajo, $(this));
+	    playAndRecord(sounds.agudoBajo, $(this));
 		});
 
 	var playAndRecord = function(sound, hitControl){
-	    sound(hitControl);
-	    $scope.addToSong(function(){
-				sound(hitControl);
-			});
-		};
+		playAndAnimate(sound, hitControl);
+		$scope.addToSong(function(){
+			playAndAnimate(sound, hitControl);
+		});
+	};
 
-	var playGraveAlto = function(hitControl){
+	var playAndAnimate = function(sound, hitControl){
 	    hitControl.fadeOut('fast');
 	    hitControl.fadeIn('fast');
-	    graveAlto.play();
-		};
-
-	var playGraveBajo = function(hitControl){
-	    hitControl.fadeOut('fast');
-	    hitControl.fadeIn('fast');
-	    graveBajo.play();
-		};
-
-	var playAgudoAlto = function(hitControl){
-	    hitControl.fadeOut('fast');
-	    hitControl.fadeIn('fast');
-	    agudoAlto.play();
-		};
-
-	var playAgudoBajo = function(hitControl){
-	    hitControl.fadeOut('fast');
-	    hitControl.fadeIn('fast');
-	    agudoBajo.play();
+	    sound.play();
 		};
 
 });
