@@ -1,31 +1,28 @@
 'use strict';
 
 angular.module('jsCajonYeomanApp')
-  .controller('MainCtrl', function ($scope) {
-
-	var song = [];
+  .controller('MainCtrl', function ($scope, song) {
 
 	$scope.velocity = 200;
 
-	$scope.addToSong = function(movement){
-	    song.push(movement);
-		};
-
 	$scope.playSong = function(){
-		if (song.length > 0) {
-	    var songCopy = song.slice(0);
-	    songCopy.reverse();
+		playSong();
+	};
+
+	$scope.deleteSong = function(){
+		song.delete();
+	};
+
+	var playSong = function(){
+		if (!song.ended()) {
 	    var songInterval = setInterval(function(){
-	        songCopy.pop()();
-	        if (songCopy.length === 0){
+	        song.next()();
+	        if (song.ended()){
 						window.clearInterval(songInterval);
+						song.restart();
 	        }
 				}, $scope.velocity);
 		}
 	};
-
-	$scope.deleteSong = function(){
-	    song.length = 0;
-		};
 
 });

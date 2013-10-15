@@ -13,12 +13,17 @@ describe('ControllerCajon', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
+
     sound = jasmine.createSpyObj('sound', ['play']);
     sounds = jasmine.createSpyObj('sounds', ['agudoAlto', 'agudoBajo', 'graveAlto', 'graveBajo']);
     sounds.agudoAlto.andReturn(sound);
+
+    song = jasmine.createSpyObj('song', ['record']);
+
     CajonCtrl = $controller('CajonCtrl', {
       $scope: scope,
-      sounds: sounds
+      sounds: sounds,
+      song: song
     });
   }));
 
@@ -71,6 +76,41 @@ describe('ControllerCajon', function () {
   it('plays grave bajo sound in the right', function(){
     scope.graveDerFlojo();
     expect(sounds.graveBajo).toHaveBeenCalled();
+  });
+
+  describe("recording sounds in song", function(){
+    it('should record an agudo alto when agudo alto left', function(){
+      scope.agudoIzqFuerte();
+      expect(song.record).toHaveBeenCalledWith(sounds.agudoAlto);
+    });
+    it('should record an agudo bajo when agudo bajo left', function(){
+      scope.agudoIzqFlojo();
+      expect(song.record).toHaveBeenCalledWith(sounds.agudoBajo);
+    });
+    it('should record an agudo alto when agudo alto right', function(){
+      scope.agudoDerFuerte();
+      expect(song.record).toHaveBeenCalledWith(sounds.agudoAlto);
+    });
+    it('should record an agudo bajo when agudo bajo right', function(){
+      scope.agudoDerFlojo();
+      expect(song.record).toHaveBeenCalledWith(sounds.agudoBajo);
+    });
+    it('should record an grave alto when grave alto left', function(){
+      scope.graveIzqFuerte();
+      expect(song.record).toHaveBeenCalledWith(sounds.graveAlto);
+    });
+    it('should record an grave bajo when grave bajo left', function(){
+      scope.graveIzqFlojo();
+      expect(song.record).toHaveBeenCalledWith(sounds.graveBajo);
+    });
+    it('should record an grave alto when grave alto right', function(){
+      scope.graveDerFuerte();
+      expect(song.record).toHaveBeenCalledWith(sounds.graveAlto);
+    });
+    it('should record an grave bajo when grave bajo right', function(){
+      scope.graveDerFlojo();
+      expect(song.record).toHaveBeenCalledWith(sounds.graveBajo);
+    });
   });
 
 });

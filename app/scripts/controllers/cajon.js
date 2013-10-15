@@ -11,7 +11,7 @@ angular.module('jsCajonYeomanApp')
       };
     })
     
-	.controller('CajonCtrl', function($scope, sounds){
+	.controller('CajonCtrl', function($scope, sounds, song){
 
 	    $scope.agudoIzqFuerte = function(){
 				playAndRecord(sounds.agudoAlto);
@@ -47,6 +47,7 @@ angular.module('jsCajonYeomanApp')
 
 			var playAndRecord = function(sound){
 				playAndAnimate(sound);
+				song.record(sound);
 			};
 
 			var playAndAnimate = function(sound){
