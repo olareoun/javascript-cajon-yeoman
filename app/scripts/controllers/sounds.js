@@ -19,11 +19,17 @@ angular.module('jsCajonYeomanApp')
 	    formats: [ 'ogg' ]
 		});
 
+	var playSound = function(sound){
+		return function(){
+			sound.play();
+		};
+	};
+
 	return{
-		graveAlto: graveAlto,
-		graveBajo: graveBajo,
-		agudoAlto: agudoAlto,
-		agudoBajo: agudoBajo
+		graveAlto: playSound(graveAlto),
+		graveBajo: playSound(graveBajo),
+		agudoAlto: playSound(agudoAlto),
+		agudoBajo: playSound(agudoBajo)
 	};
 
 });
