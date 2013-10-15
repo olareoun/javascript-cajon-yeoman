@@ -1,5 +1,3 @@
-/*global $:false */
-
 'use strict';
 
 angular.module('jsCajonYeomanApp')
@@ -16,47 +14,42 @@ angular.module('jsCajonYeomanApp')
 	.controller('CajonCtrl', function($scope, sounds){
 
 	    $scope.agudoIzqFuerte = function(){
-				playAndRecord(sounds.agudoAlto, $(this));
+				playAndRecord(sounds.agudoAlto);
 			};
 
 	    $scope.agudoIzqFlojo = function(){
-				playAndRecord(sounds.agudoBajo, $(this));
+				playAndRecord(sounds.agudoBajo);
 			};
 
 	    $scope.agudoDerFuerte = function(){
-				playAndRecord(sounds.agudoAlto, $(this));
+				playAndRecord(sounds.agudoAlto);
 			};
 
 	    $scope.agudoDerFlojo = function(){
-				playAndRecord(sounds.agudoBajo, $(this));
+				playAndRecord(sounds.agudoBajo);
 			};
 
 	    $scope.graveIzqFuerte = function(){
-				playAndRecord(sounds.graveAlto, $(this));
+				playAndRecord(sounds.graveAlto);
 			};
 
 	    $scope.graveIzqFlojo = function(){
-				playAndRecord(sounds.graveBajo, $(this));
+				playAndRecord(sounds.graveBajo);
 			};
 
 	    $scope.graveDerFuerte = function(){
-				playAndRecord(sounds.graveAlto, $(this));
+				playAndRecord(sounds.graveAlto);
 			};
 
 	    $scope.graveDerFlojo = function(){
-				playAndRecord(sounds.graveBajo, $(this));
+				playAndRecord(sounds.graveBajo);
 			};
 
-			var playAndRecord = function(sound, hitControl){
-				playAndAnimate(sound, hitControl);
-				// $scope.addToSong(function(){
-				// 	playAndAnimate(sound, hitControl);
-				// });
+			var playAndRecord = function(sound){
+				playAndAnimate(sound);
 			};
 
-			var playAndAnimate = function(sound, hitControl){
-				// hitControl.fadeOut('fast');
-				// hitControl.fadeIn('fast');
+			var playAndAnimate = function(sound){
 				sound();
 			};
 

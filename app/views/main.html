@@ -5,14 +5,8 @@
             <input type="text" ng-model="velocity" size="4" />
         </div>
         <div class="side-menu">
-            <form ng-submit="playSong()">
-                <input type="submit" class="btn btn-lg btn-warning song-control" id="playSong" value="Play song" />
-            </form>
-        </div>
-        <div class="side-menu">
-            <form ng-submit="deleteSong()">
-                <input type="submit" class="btn btn-lg btn-danger song-control" id="deleteSong" value="Delete song" />
-            </form>
+            <input type="submit" class="btn btn-sm btn-warning" ng-click="playSong()" value="Play" />
+            <input type="submit" class="btn btn-sm btn-danger" ng-click="deleteSong()" value="Delete" />
         </div>
     </div>
     <div class="col-md-10">
