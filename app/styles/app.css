@@ -9,6 +9,11 @@ h1{
 	font-size: 100px;
 }
 
+h3{
+	font-family: "Kite One";
+	font-size: 30px;
+}
+
 .jumbotron{
 	text-align: center;
 	background-color: #333333;
@@ -19,6 +24,7 @@ h1{
 
 .jumbotron h1{
 	font-size: 100px;
+	text-align: left;
 }
 
 .jumbotron h1 .main{
@@ -26,9 +32,13 @@ h1{
 	font-family: "Devonshire";
 }
 
-.jumbotron p{
+.jumbotron p, .jumbotron h3{
 	text-align: right;
 	color: #ffff99;
+}
+
+.jumbotron h3{
+	color: #ff3333;
 }
 
 .side-menu{
@@ -56,6 +66,18 @@ h1{
 	border-style: solid;
 	border-radius: 0.5em;
 	color: white;
+}
+
+.leyenda{
+	margin: 25px;
+	padding: 25px;
+	width: 300px;
+	background-color: #ffff99;
+	border-width: 1.5px;
+	border-color: #ff3333;
+	border-style: solid;
+	border-radius: 0.5em;
+	color: #333333;
 }
 
 .player label{
