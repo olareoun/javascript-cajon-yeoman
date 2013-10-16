@@ -12,26 +12,55 @@ h1{
 .jumbotron{
 	text-align: center;
 	background-color: #333333;
-	color: #cc6600;
+	color: #ff3333;
+    padding-bottom: 28px;
+    padding-top: 28px;
 }
 
 .jumbotron h1{
 	font-size: 100px;
 }
 
+.jumbotron h1 .main{
+	font-size: 250px;
+	font-family: "Devonshire";
+}
+
+.jumbotron p{
+	text-align: right;
+	color: #ffff99;
+}
+
 .side-menu{
 	padding: 25px;
 	width: 300px;
-	background-color: #cc6600;
-	border-right-width: 5px;
+	background-color: #ff3333;
+	border-right-width: 3px;
 	border-right-color: #333333;
-	border-right-style: dotted;
-	border-top-right-radius: 2em;
-	border-bottom-right-radius: 2em;
-	border-bottom-width: 5px;
+	border-right-style: solid;
+	border-top-right-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+	border-bottom-width: 3px;
 	border-bottom-color: #333333;
-	border-bottom-style: dotted;
-	border-bottom-right-radius: 2em;
+	border-bottom-style: solid;
+	border-bottom-right-radius: 0.5em;
+}
+
+.player{
+	margin: 25px;
+	padding: 25px;
+	width: 300px;
+	background-color: #333333;
+	border-width: 1.5px;
+	border-color: #ff3333;
+	border-style: solid;
+	border-radius: 0.5em;
+	color: white;
+}
+
+.player label{
+	font-size: 18px;
+	font-weight: normal;
 }
 
 label{

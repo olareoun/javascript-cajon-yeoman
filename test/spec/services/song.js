@@ -72,16 +72,5 @@ describe('song service', function(){
     expect(song.empty()).toBeTruthy();
   });
 
-  // describe('playing a song', function(){
-  //   it('when no sound was added', function(){
-  //     song.play();
-  //   });
-  //   it('when one sound is added then is possible to play it', function(){
-  //     song.record(sounds.agudoAlto);
-  //     song.play();
-  //     expect(sounds.agudoAlto).toHaveBeenCalled();
-  //   });
-  // });
-
 });
  
