@@ -3,7 +3,7 @@ var song;
 describe('song service', function(){
   beforeEach(module('jsCajonYeomanApp'));
 
-  var sound, sounds;
+  var sound, sounds, partitura;
 
   beforeEach(function() {
 

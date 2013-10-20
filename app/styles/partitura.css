@@ -1,0 +1,25 @@
+.partitura{
+	margin: 25px;
+	padding: 25px;
+	width: 300px;
+	background-color: white;
+	border-width: 1.5px;
+	border-color: #ff3333;
+	border-style: solid;
+	border-radius: 0.5em;
+	color: #333333;
+}
+
+.partitura .table{
+	text-align: center;
+	vertical-align: middle;
+	font-size: 30px;
+}
+
+.partitura table{
+
+}
+
+.partitura td{
+	font-size: 30px;
+}
